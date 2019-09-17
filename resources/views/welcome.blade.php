@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Media Organiser</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Media Organiser</title>
+</head>
+<body>
+  <h1>Media Organiser</h1>
+</body>
 
-    </head>
-    <body>
-
-    </body>
-</html>
+<script src="{{ mix( 'js/app.js')}}" ></script>
+<script>
+  console.log("hello");
+    $( document ).ready( function() {
+      console.log( "hello2" );
+      Admin.GetMediaData();
+    });
+</script>

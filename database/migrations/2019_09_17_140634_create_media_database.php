@@ -29,6 +29,6 @@ class CreateMediaDatabase extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media_database');
+        Schema::dropIfExists( 'media_database' );
     }
 }
