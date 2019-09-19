@@ -5,10 +5,9 @@
   <title>Media Organiser</title>
   <style>
   #navbar {
-    padding: 100px;
+    padding: 5px;
     border-radius: 30px;
-    background-color: peachpuff;
-    background-image: linear-gradient( transparent 50%, rgba( 255,255,255,.5 ) 50% );
+    background-color: lightgrey;
     background-size: 50px 50px;
   }
 
@@ -26,6 +25,41 @@
     float: right;
   }
 
+  #media-datatable, th, td {
+    border: 1px solid black;
+  }
+
+  #media-datatable {
+    border-collapse: collapse;
+    width: 100%;
+
+  }
+
+  #media-datatable_length{
+    float: right;
+  }
+
+  th {
+    /* background-color: deepskyblue; */
+    /* color: white; */
+  }
+
+  #media-datatable_next, #media-datatable_previous {
+    border: 2px solid black;
+    /* background-color: white; */
+    padding: 2px;
+    font-size: 16px;
+    cursor: pointer;
+    color: black;
+    border-radius: 30px;
+    float: right;
+  }
+
+  #media-datatable_next:hover, #media-datatable_previous:hover {
+    background-color: black;
+    color: white;
+  }
+
   </style>
 </head>
 <body>
@@ -34,18 +68,15 @@
       <h1>Media Organiser</h1>
     </div>
   </div>
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
-    <table id="media-datatable" class="table display table-hover table-bordered"></table>
+  <div class="table table-striped table-bordered">
+    <table id="media-datatable" class="table table-striped"></table>
   </div>
 </body>
-
 
 <script src="{{ mix( 'js/app.js')}}" ></script>
 <script src="{{ mix( 'js/script.js')}}" ></script>
 <script>
-  console.log( "hello" );
     $( document ).ready( function() {
-      console.log( "hello2" );
       Admin.GetMediaData();
     });
 </script>
