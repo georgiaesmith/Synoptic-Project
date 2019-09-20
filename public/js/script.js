@@ -1,10 +1,10 @@
 class Admin {
-
   static GetMediaData(){
-    axios.get( 'Http/MediaModel/welcome' ).then( function ( aData ) {
+    console.log("admin class .js");
+    axios.get( 'MediaController/GetMediaData' ).then( function ( aData ) {
       console.log(aData);
     }).catch( function( aError ) {
-      console.log("oops, error!");
+      console.log(aError);
     });
 
     $( '#media-datatable' ).DataTable({

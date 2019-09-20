@@ -14,4 +14,6 @@ class MediaModel extends Model
     protected $fillable = [
         'name', 'artist', 'album'
     ];
+
+    protected $table = "media_database";
 }

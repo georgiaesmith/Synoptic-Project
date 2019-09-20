@@ -11,11 +11,13 @@ class MediaSeeder extends Seeder
      */
     public function run()
     {
-        DB::table( 'media_database' )->delete();
+      DB::table( 'media_database' )->delete();
+      for ( $i = 0; $i < 100; $i++ ){
         DB::table( 'media_database' )->insert([
-            'name' => '5, 6, 7, 8',
-            'artist' => "Steps",
-            'album' => 'Irritating songs of yesteryear'
+          'name' => str_random( 10 ),
+          'artist' => str_random( 10 ),
+          'album' => str_random( 10 )
         ]);
+      }
     }
 }

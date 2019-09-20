@@ -68,8 +68,10 @@
       <h1>Media Organiser</h1>
     </div>
   </div>
-  <div class="table table-striped table-bordered">
-    <table id="media-datatable" class="table table-striped"></table>
+  <div>
+    <div class="table table-striped table-bordered">
+      <table id="media-datatable" class="table table-striped"></table>
+    </div>
   </div>
 </body>
 
