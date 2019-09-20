@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view( 'welcome' );
+// });
+//
+// Route::resource( 'welcome', 'MediaController' );
+
+Route::get( '/', 'MediaController@GetMediaData' );
