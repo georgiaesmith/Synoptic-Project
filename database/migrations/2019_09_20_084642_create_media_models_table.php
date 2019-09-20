@@ -13,7 +13,7 @@ class CreateMediaModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('media_models', function (Blueprint $table) {
+        Schema::create( 'media_database', function ( Blueprint $table ) {
             $table->bigIncrements('id');
             $table->string( 'name' );
             $table->string( 'artist' );
@@ -29,6 +29,6 @@ class CreateMediaModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media_models');
+        Schema::dropIfExists( 'media_database' );
     }
 }
