@@ -60,6 +60,10 @@
     color: white;
   }
 
+  .table{
+    width: 100%;
+  }
+
   </style>
 </head>
 <body>
@@ -69,8 +73,10 @@
     </div>
   </div>
   <div>
-    <div class="table table-striped table-bordered">
-      <table id="media-datatable" class="table table-striped"></table>
+    <div class="table">
+      <br>
+      <table id="media-datatable" class="table table-dark table-bordered">
+      </table>
     </div>
   </div>
 </body>
@@ -79,6 +85,6 @@
 <script src="{{ mix( 'js/script.js')}}" ></script>
 <script>
     $( document ).ready( function() {
-      Admin.GetMediaData();
+      let lData = Admin.GetMediaData();
     });
 </script>
