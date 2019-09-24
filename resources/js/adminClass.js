@@ -2,12 +2,13 @@ class Admin {
   static GetMediaData(){
     axios.get( '/api/MediaData' ).then( function ( aData ) {
       console.log(aData.data);
-      $( '#media-datatable' ).DataTable({
+      let lTable = $( '#media-datatable' ).DataTable({
         data: aData.data,
-        searching: false,
+        searching: true,
         filtering: true,
         orderCellsTop: true,
         fixedHeader: true,
+        searchable: true,
         columns: [
           {
             title: 'Name',
@@ -32,7 +33,6 @@ class Admin {
           }
         ]
       });
-      $( '.dataTables_length' ).addClass( 'bs-select' );
     }).catch( function( aError ) {
       console.log( aError );
     });
