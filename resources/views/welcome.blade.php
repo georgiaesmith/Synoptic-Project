@@ -4,105 +4,80 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <title>Media Organiser</title>
   <style>
-
-  li, a {
-    display:inline;
-    font-size: 20px;
-    font-family: arial;
+  body {
+    background-color: gray;
+    background-image: linear-gradient( 90deg, transparent 50%, rgba( 255,255,255,.5 ) 50% );
+    background-size: 50px 50px;
   }
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  h2 {
+    text-align: center;
+    font-family: Georgia;
+  }
+
+  #title {
+    border-radius: 30px;
+    background-color: white;
+    height: 50px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 3%;
+  }
+
+  #logo {
+    float:left;
+    border-radius: 30px;
+    background-color: white;
+    padding: 15px;
+    height: 50px;
+  }
+
+  #body {
+    border-radius: 30px;
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    padding: 15px;
+    padding-bottom: 25px;
+
+  }
+
+  .dataTables_length {
     float: right;
   }
 
-  #media-datatable, th, td {
-    border: 1px solid black;
+  .dataTables_info {
+    float: right;
+  }
+
+  #media-datatable_next, #media-datatable_previous, #media-datatable_info, #media-datatable_length, .paginate_button  {
+    border-radius: 30px;
+    color: white;
+    padding: 5px;
+    background-color: #666666;
   }
 
   #media-datatable {
-    border-collapse: collapse;
-    width: 100%;
+    border-top: none;
   }
 
-  #media-datatable_length {
-    float: right;
-  }
-
-  .table {
-    width: 100%;
-  }
-
-  #media-datatable th, td {
-    text-align: left;
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-
-  #media-datatable_filter{
-    float: left;
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-  }
-
-  #media-datatable tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-
-  #media-datatable tr:hover {
-    background-color: #ddd;
-  }
-
-  #media-datatable th {
-    font-family: arial;
-    font-size: 20px;
-  }
-
-  #media-datatable {
-    border-collapse: collapse;
-    margin-left: inherit;
-  }
-
-  .datatables_paginate {
-    float:right;
-  }
-
-  .datatables_paginate, .paging_simple_numbers, span {
-    margin: 0;
-    color: #73879C;
-    font-weight: 400;
-    line-height: 1.471;
-    font-size: 13px;
-    background-color: #f2f2f2;
-    text-align: right;
-  }
-
-  #media-datatable_length {
-    float: right;
-  }
-
-  #media-datatable_filter{
-    color: blue;
-  }
   </style>
 </head>
 <body>
-  <div id="navbar">
-    <nav class="navbar navbar-light bg-primary">
-      <h1>Media Organiser</h1>
-    </nav>
-  </div>
-  <div>
-    <div class="table">
-      <div>
-        <br>
-      <table id="media-datatable" class="table table-bordered table-hover" align="center">
-      </table>
+  <div class="container">
+    <div>
+      <div id="logo">
+        <i class="fas fa-headphones-alt fa-lg"></i>
+      </div>
+      <div id="title">
+        <h2>Media Organiser</h2>
+      </div>
+      <br>
+      <div id="body">
+        <table id="media-datatable" class="table table-hover" align="center">
+        </table>
       </div>
     </div>
   </div>
@@ -111,8 +86,7 @@
 <script src="{{ mix( 'js/app.js')}}" ></script>
 <script src="{{ mix( 'js/script.js')}}" ></script>
 <script>
-$('#media-datatable_filter').addClass( 'mr-sm-2' );
-    $( document ).ready( function() {
-      let lData = Admin.GetMediaData();
-    });
+$( document ).ready( function() {
+  let lData = Admin.GetMediaData();
+});
 </script>

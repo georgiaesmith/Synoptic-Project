@@ -9,6 +9,7 @@ class Admin {
         orderCellsTop: true,
         fixedHeader: true,
         searchable: true,
+        pagingType: "simple_numbers",
         columns: [
           {
             title: 'Name',
