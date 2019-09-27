@@ -6,9 +6,10 @@ class Admin {
         data: aData.data,
         searching: true,
         filtering: true,
-        orderCellsTop: true,
+        // orderCellsTop: true,
         fixedHeader: true,
         searchable: true,
+        ordering: true,
         pagingType: "simple_numbers",
         columns: [
           {

@@ -5,7 +5,7 @@
   <title>Media Organiser</title>
   <style>
   body {
-    background-color: gray;
+    background-color: lightgrey;
     background-image: linear-gradient( 90deg, transparent 50%, rgba( 255,255,255,.5 ) 50% );
     background-size: 50px 50px;
   }
@@ -41,7 +41,6 @@
     width: 90%;
     padding: 15px;
     padding-bottom: 25px;
-
   }
 
   .dataTables_length {
@@ -52,15 +51,24 @@
     float: right;
   }
 
-  #media-datatable_next, #media-datatable_previous, #media-datatable_info, #media-datatable_length, .paginate_button  {
-    border-radius: 30px;
-    color: white;
-    padding: 5px;
-    background-color: #666666;
+  body {
+    font-family: Georgia;
   }
 
-  #media-datatable {
-    border-top: none;
+  #media-datatable_length {
+    width:100%;
+  }
+
+  #media-datatable_filter {
+    float: right;
+  }
+
+  #media-datatable_paginate {
+    float:right;
+  }
+
+  #media-datatable_info {
+    float:left;
   }
 
   </style>
@@ -76,7 +84,7 @@
       </div>
       <br>
       <div id="body">
-        <table id="media-datatable" class="table table-hover" align="center">
+        <table id="media-datatable" class="table table-hover dt-responsive" align="center">
         </table>
       </div>
     </div>
