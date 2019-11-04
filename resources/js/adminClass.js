@@ -39,4 +39,12 @@ class Admin {
       console.log( aError );
     });
   }
+
+  static DeleteMediaEntry(){
+    axios.delete( '/api/MediaData' ).then( function( aData ){
+      this.GetMediaData();
+    }).catch( function( aError ){
+        console.log( aError );
+    });
+  }
 }
