@@ -76,7 +76,20 @@
   }
 
   .selected {
-    background-color: pink;
+    background-color: lightgrey;
+  }
+
+  .btn {
+    background-color: PEACHPUFF;
+    font-family: Georgia;
+  }
+
+  .btn:hover {
+    background-color: lightgrey;
+  }
+
+  #ButtonPanel  {
+    text-align: right;
   }
 
   </style>
@@ -92,6 +105,9 @@
       </div>
       <br>
       <div id="body">
+        <div id="ButtonPanel">
+          <button type="button" id="SelectAllButton" class="btn">Select All</button>
+        </div>
         <table id="media-datatable" class="table table-hover dt-responsive" align="center">
         </table>
       </div>
@@ -102,7 +118,4 @@
 <script src="{{ mix( 'js/app.js')}}" ></script>
 <script src="{{ mix( 'js/script.js')}}" ></script>
 <script>
-$( document ).ready( function() {
-  let lData = Admin.GetMediaData();
-});
 </script>

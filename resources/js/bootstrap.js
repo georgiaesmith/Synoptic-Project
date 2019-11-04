@@ -3,8 +3,8 @@ window._ = require('lodash');
 window.$ = require('jquery');
 var $ = require('jquery');
 
-require( 'datatables.net-select-bs4' );
 require( 'datatables.net-bs4' );
+require( 'datatables.net-select-bs4' );
 var dt = require( 'datatables.net' );
 // var buttons = require( 'datatable.net-bt' )( window, window.$ );
 /**

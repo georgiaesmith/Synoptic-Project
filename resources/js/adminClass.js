@@ -5,9 +5,14 @@ class Admin {
         data: aData.data,
         searching: true,
         filtering: true,
-        // orderCellsTop: true,
+        orderCellsTop: true,
         fixedHeader: true,
         searchable: true,
+        select: {
+          style: 'multi'
+        },
+        multiselect: true,
+        responsive: true,
         ordering: true,
         pagingType: "simple_numbers",
         columns: [
