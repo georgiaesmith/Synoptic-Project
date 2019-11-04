@@ -118,4 +118,7 @@
 <script src="{{ mix( 'js/app.js')}}" ></script>
 <script src="{{ mix( 'js/script.js')}}" ></script>
 <script>
+$( document ).ready( (aEvent ) => {
+  Admin.GetMediaData();
+})
 </script>
