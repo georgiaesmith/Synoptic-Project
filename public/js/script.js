@@ -1,7 +1,6 @@
 class Admin {
   static GetMediaData(){
     axios.get( '/api/MediaData' ).then( function ( aData ) {
-      console.log(aData.data);
       let lTable = $( '#media-datatable' ).DataTable({
         data: aData.data,
         searching: true,
@@ -37,6 +36,14 @@ class Admin {
       });
     }).catch( function( aError ) {
       console.log( aError );
+    });
+  }
+
+  static DeleteMediaEntry(){
+    axios.delete( '/api/MediaData' ).then( function( aData ){
+      this.GetMediaData();
+    }).catch( function( aError ){
+        console.log( aError );
     });
   }
 }

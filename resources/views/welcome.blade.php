@@ -71,6 +71,14 @@
     float:left;
   }
 
+  #title {
+    text-align: center;
+  }
+
+  .selected {
+    background-color: pink;
+  }
+
   </style>
 </head>
 <body>
