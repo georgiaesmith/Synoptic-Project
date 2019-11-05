@@ -106,7 +106,8 @@
       <br>
       <div id="body">
         <div id="ButtonPanel">
-          <button type="button" id="SelectAllButton" class="btn">Select All</button>
+          <button type="button" id="DeselectButton" class="btn">Deselect</button>
+          <button type="button" id="DeleteButton" class="btn">Delete</button>
         </div>
         <table id="media-datatable" class="table table-hover dt-responsive" align="center">
         </table>
@@ -118,7 +119,16 @@
 <script src="{{ mix( 'js/app.js')}}" ></script>
 <script src="{{ mix( 'js/script.js')}}" ></script>
 <script>
-$( document ).ready( (aEvent ) => {
+$( document ).ready( ( aEvent ) => {
   Admin.GetMediaData();
-})
+});
+
+$( '#DeselectButton' ).on( 'click', function() {
+  $( '#media-datatable' ).DataTable().rows().deselect();
+});
+
+$( '#DeleteButton' ).on( 'click', function() {
+  Admin.DeleteMediaEntry();
+});
+
 </script>

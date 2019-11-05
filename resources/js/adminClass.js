@@ -45,10 +45,24 @@ class Admin {
   }
 
   static DeleteMediaEntry(){
-    axios.delete( '/api/MediaData' ).then( function( aData ){
-      this.GetMediaData();
-    }).catch( function( aError ){
+    console.log("Delete button has been clicked");
+    let lTable = $( '#media-datatable' ).DataTable();
+    let lGeorgia = lTable.rows( '.selected' ).data();
+    // console.log(lGeorgia[1]);
+    let i;
+    for ( i = 0; i < lGeorgia.length; i++ ){
+      console.log(lGeorgia[i]);
+      let lName = lGeorgia[ i ].name;
+      console.log(lName);
+      axios.delete( '/api/MediaData', { data: { "name": lName } } ).then( function( aData ){
+        this.GetMediaData();
+        console.log("Weve deleted it boys");
+      }).catch( function( aError ){
         console.log( aError );
-    });
+      });
+    }
+    // let lSelectedValue = $( "#media-datatable" ).DataTable().row( { selected: true } ).data().name;
+    // console.log( lSelectedValue );
+
   }
 }

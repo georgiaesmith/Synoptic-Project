@@ -17,4 +17,8 @@ class MediaController extends Controller
     public function LoadMediaData( Request $aRequest ){
       return MediaModel::all();
     }
+
+    public function DeleteMediaEntry( Request $aRequest ){
+      return "hello";
+    }
 }
