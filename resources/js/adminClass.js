@@ -44,7 +44,7 @@ class Admin {
         });
     }
 
-    static DeleteMediaEntry( ){
+    static DeleteMediaEntry(){
         let lThis = this;
         let lTable = $( '#media-datatable' ).DataTable();
         let lSelected = lTable.rows( '.selected' ).data();
@@ -57,13 +57,5 @@ class Admin {
                 console.log( aError );
             });
         }
-
-        // console.log("Delete button has been clicked");
-        // let lPayload = [];
-        // let lGeorgia1 = JSON.stringify( lPayload );
-        // console.log(lGeorgia);
-
-        // console.log(lSelectedArray);
-        // let lSelectedValue = $( "#media-datatable" ).DataTable().row( { selected: true } ).data().name;
     }
 }
