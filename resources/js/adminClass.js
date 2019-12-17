@@ -46,16 +46,22 @@ class Admin {
 
     static DeleteMediaEntry( ){
         let lThis = this;
-        console.log("Delete button has been clicked");
         let lTable = $( '#media-datatable' ).DataTable();
-        let lGeorgia = lTable.rows( '.selected' ).data();
-        let lPayload = [];
-        for ( let i = 0; i < lGeorgia.length; i++ ){
-            let lSelected = lGeorgia[ i ].id;
-            lPayload.push( lSelected );
+        let lSelected = lTable.rows( '.selected' ).data();
+        for ( let i = 0; i < lSelected.length; i++ ){
+            let lData = lSelected[ i ].id;
+            console.log( lData );
+            axios.delete( '/api/MediaData', { data: { "ID" : lData } } ).then( function( aResponse ){
+                lTable.row( '.selected' ).remove().draw();
+            }).catch( function( aError ){
+                console.log( aError );
+            });
         }
-        let lGeorgia1 = JSON.stringify( lPayload );
-        console.log(lGeorgia);
+
+        // console.log("Delete button has been clicked");
+        // let lPayload = [];
+        // let lGeorgia1 = JSON.stringify( lPayload );
+        // console.log(lGeorgia);
 
         // console.log(lSelectedArray);
         // let lSelectedValue = $( "#media-datatable" ).DataTable().row( { selected: true } ).data().name;

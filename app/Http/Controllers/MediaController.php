@@ -21,7 +21,7 @@ class MediaController extends Controller
     public function DeleteMediaEntry( Request $aRequest ){
         $lInput = $aRequest->all();
         /* Make sure we have got our payload - i.e. "IDsToDelete": array( 1,2,3,4 ) */
-        
+        dd( $lInput );
 
         /* Is the payload valid - check if its an array, and that the information inside is what you want */
 
