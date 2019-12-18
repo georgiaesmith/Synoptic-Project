@@ -19,33 +19,23 @@ class MediaController extends Controller
     }
 
     public function DeleteMediaEntry( Request $aRequest ){
+        $lIsSuccessful = true;
         $lInput = $aRequest->all();
-        // dd( $lInput );
-        /* Is the payload valid - check if its an array, and that the information inside is what you want */
-        if ( !array_key_exists( "ID", $lInput ) ){
-            /* there was no ID provided -> log error */
-            // dd( "No ID provided" );
-        }
-
         $lGeorgia = MediaModel::all();
-        /* VALIDATE :: make sure that the selected ID is present in the database */
-        dd( $lGeorgia);
-        /* find a way to get error messages */
-
-
-        // if( $lInput[ "ID" ] in  )
-
-
-
-        // if ( count( $lInput ) < 1 ){
-        //     dd( "im an empty array" );
-        //
-        // }
-
-        /* If using IDs, look at doing a delete using laravel ORM delete */
+        if ( !array_key_exists( "ID", $lInput ) ){
+            return response()->json([
+                "ReturnStatus" => 'Error',
+                'ReturnMessage' => "Media Entry ID is missing."
+            ]);
+        }
         $lID = MediaModel::find( $lInput[ "ID" ] );
+        if ( $lID == null ){
+            return response()->json([
+                "ReturnStatus" => 'Error',
+                'ReturnMessage' => "Media Entry ID is not valid."
+            ]);
+        }
         $lID->delete();
-        /* Log the successful delete */
         return response()->json([
             "ReturnStatus" => 'Success',
             "ReturnCode" => 200,
