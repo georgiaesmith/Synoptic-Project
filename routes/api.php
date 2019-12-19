@@ -14,5 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::get( 'MediaData', "MediaController@LoadMediaData" );
-
 Route::delete( 'MediaData', "MediaController@DeleteMediaEntry" );

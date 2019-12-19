@@ -1,4 +1,7 @@
 class Admin {
+    /**
+     * Get the media data from the back end
+     */
     static GetMediaData(){
         axios.get( '/api/MediaData' ).then( function ( aData ) {
             let lTable = $( '#media-datatable' ).DataTable({
@@ -44,13 +47,15 @@ class Admin {
         });
     }
 
+    /**
+     * Delete the selected rows
+     */
     static DeleteMediaEntry(){
         let lThis = this;
         let lTable = $( '#media-datatable' ).DataTable();
         let lSelected = lTable.rows( '.selected' ).data();
         for ( let i = 0; i < lSelected.length; i++ ){
             let lData = lSelected[ i ].id;
-            console.log( lData );
             axios.delete( '/api/MediaData', { data: { "ID" : lData } } ).then( function( aResponse ){
                 lTable.row( '.selected' ).remove().draw();
             }).catch( function( aError ){

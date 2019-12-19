@@ -278,7 +278,6 @@ class MediaSeeder extends Seeder
           'artist' => 'Oasis',
           'album' => 'Definitely Maybe'
         ],
-
       ]);
     }
 }
